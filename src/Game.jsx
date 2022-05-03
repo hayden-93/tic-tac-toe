@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 
 const Square = (props) => {
-  const [value, setValue] = useState(null);
-
   return (
     <>
-      <button className="square" onClick={() => setValue("X")}>
-        {value}
+      <button className="square" onClick={() => {}}>
+        {props.value}
       </button>
     </>
   );
 };
 
 const Board = () => {
+  const initialSquares = [null, null, null, null, null, null, null, null, null];
+  const [squares, setSquares] = useState(initialSquares);
+
   const renderSquare = (i) => {
-    return <Square />;
+    return <Square value={squares[i]} />;
   };
 
   return (
