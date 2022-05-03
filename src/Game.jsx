@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Square = (props) => {
+  const [value, setValue] = useState(null);
+
   return (
     <>
-      <button
-        className="square"
-        onClick={() => alert(`square ${props.value} clicked`)}
-      >
-        {props.value}
+      <button className="square" onClick={() => setValue("X")}>
+        {value}
       </button>
     </>
   );
@@ -15,7 +14,7 @@ const Square = (props) => {
 
 const Board = () => {
   const renderSquare = (i) => {
-    return <Square value={i} />;
+    return <Square />;
   };
 
   return (
